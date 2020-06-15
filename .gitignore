@@ -25,3 +25,6 @@ yarn-error.log*
 
 # personal 
 ignor*
+
+#taiwind automatic styles generated
+src/index.css
