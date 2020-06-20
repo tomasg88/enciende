@@ -3,7 +3,7 @@ import Page from "../Page/Page";
 
 const HomePage = () => {
 	return (
-		<Page page="home">
+		<Page background="purple">
 			<h4 className="animate__animated animate__swing">Home</h4>
 		</Page>
 	);
