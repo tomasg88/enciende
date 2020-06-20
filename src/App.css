@@ -4,29 +4,14 @@
 
 .back-main-pink {
 	background-size: cover;
-	background: linear-gradient(
-		to bottom,
-		rgb(255, 239, 186),
-		rgb(255, 255, 255),
-		white
-	);
+	background: linear-gradient(to top, #eec0c2, #ffefba, #ffffff);
 }
 
 .back-main-purple {
 	background-size: cover;
-	background: linear-gradient(
-		to top,
-		rgb(217, 167, 199),
-		rgb(255, 252, 220),
-		white
-	);
+	background: linear-gradient(to top, #d9a7c7, #fffcdc, #ffffff);
 }
 
 .back-main-blue {
-	background: linear-gradient(
-		to top,
-		rgb(28, 146, 210),
-		rgb(242, 252, 254),
-		white
-	);
+	background: linear-gradient(to top, #1c92d2, #f2fcfe, #ffffff);
 }
