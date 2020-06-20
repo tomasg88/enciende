@@ -24,7 +24,7 @@ yarn-error.log*
 
 
 # personal 
-ignor*
+Ignor*
 
 #taiwind automatic styles generated
 src/index.css
