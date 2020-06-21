@@ -20,7 +20,7 @@ const HomePage = ({ data }) => {
 				<Typography variant="button" paragraph>
 					{data.items[0].fields.description}
 				</Typography>
-				<Typography variant="subitle2" color="secondary" paragraph>
+				<Typography variant="subtitle2" color="secondary" paragraph>
 					{data.items[0].fields.mediumUser}
 				</Typography>
 			</div>

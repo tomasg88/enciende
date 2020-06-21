@@ -19,7 +19,9 @@ const Page = ({ children, background }) => {
 			direction="column"
 			className={clsx(classes.mainGrid, `back-main-${background}`)}
 		>
-			{children}
+			<Grid item xl={6} lg={8} md={10} sm={12} xs={12}>
+				{children}
+			</Grid>
 		</Grid>
 	);
 };

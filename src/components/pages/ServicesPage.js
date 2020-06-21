@@ -8,8 +8,8 @@ const ServicesPage = ({ data }) => (
 	<Page background="blue">
 		<h4>Servicio</h4>
 		{data.items.map((svc) => (
-			<Typography variant="caption" paragraph>
-				{svc.fields.name}
+			<Typography variant="caption" paragraph key={svc.sys.id}>
+				{`${svc.fields.name} - $${svc.fields.price}`}
 			</Typography>
 		))}
 	</Page>
