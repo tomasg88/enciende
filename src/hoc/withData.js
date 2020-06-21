@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useContentful } from "react-contentful";
 import {
 	CircularProgress,
@@ -10,11 +10,6 @@ import {
 	Button,
 } from "@material-ui/core";
 import Page from "../components/Page/Page";
-
-const fetchJson = async (url) => {
-	const response = await fetch(url);
-	return response.json();
-};
 
 const withData = (WrappedComponent, contentType) => {
 	return (props) => {
