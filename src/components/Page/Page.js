@@ -17,7 +17,11 @@ const Page = ({ children, background }) => {
 			alignItems="center"
 			justify="center"
 			direction="column"
-			className={clsx(classes.mainGrid, `back-main-${background}`)}
+			className={clsx(
+				classes.mainGrid,
+				`back-main-${background}`,
+				`animate__animated animate__fadeIn`
+			)}
 		>
 			<Grid item xl={6} lg={8} md={10} sm={12} xs={12}>
 				{children}
