@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
 	mainGrid: {
 		width: "100vw",
 		height: "100vh",
+		paddingTop: theme.spacing(10),
 	},
 }));
 
@@ -14,9 +15,8 @@ const Page = ({ children, background }) => {
 	return (
 		<Grid
 			container
-			alignItems="center"
+			alignItems="flex-start"
 			justify="center"
-			direction="column"
 			className={clsx(
 				classes.mainGrid,
 				`back-main-${background}`,
