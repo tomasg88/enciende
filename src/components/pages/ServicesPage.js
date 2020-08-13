@@ -1,91 +1,53 @@
 import React from "react";
-import Page from "../Page/Page";
 import withData from "../../hoc/withData";
-import { Typography, Paper, Grid, makeStyles, Button } from "@material-ui/core";
 import withElevation from "../../hoc/withElevation";
+import tw from "twin.macro";
+import styled from "@emotion/styled";
+import Flip from "react-reveal/Flip";
+import Fade from "react-reveal/Fade";
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		marginTop: "10vh",
-	},
-	paper: {
-		minHeight: "30vh",
-		overflow: "auto",
-		padding: `${theme.spacing(2)}px ${theme.spacing(1)}px`,
-	},
-	svcInfo: {
-		height: "-webkit-fill-available",
-	},
-}));
+//import Page from "../Page/Page";
+//import { Typography, Paper, Grid, makeStyles, Button } from "@material-ui/core";
 
 const ServicesPage = ({ data }) => {
-	const classes = useStyles();
 	return (
-		<Page background="blue">
-			<Grid container spacing={2} className={classes.root}>
+		<div className="py-24 font-serif bg-indigo-400 bg-pattern">
+			<HeroTitle>
+				<Flip bottom cascade duration={2500}>
+					Servicios
+				</Flip>
+			</HeroTitle>
+			<div className="grid max-w-6xl grid-cols-1 gap-4 pt-8 mx-3 md:mx-auto sm:grid-cols-2 lg:grid-cols-4">
 				{data.items.map((svc) => (
-					<Grid item xl={3} lg={3} md={4} sm={6} xs={12}>
-						<Paper className={classes.paper} elevation={2}>
-							<Grid
-								container
-								direction="column"
-								justify="space-between"
-								alignItems="center"
-								className={classes.svcInfo}
-							>
-								<Grid
-									item
-									xl={12}
-									lg={12}
-									md={12}
-									sm={12}
-									xs={12}
-								>
-									<Typography
-										variant="subtitle2"
-										color="primary"
-										paragraph
-										key={svc.sys.id}
-									>
-										{`${svc.fields.name}`}
-									</Typography>
-								</Grid>
-								<Grid
-									item
-									xl={12}
-									lg={12}
-									md={12}
-									sm={12}
-									xs={12}
-								>
-									<Typography variant="body2" paragraph>
-										{
-											"Lorem ipsm .. asdfa sdfasdlfjasdfl sflkasdf alsdkfj salkfajs lfkdsjf laksdjf alskdjfas ldkjfha d"
-										}
-									</Typography>
-								</Grid>
-								<Grid
-									item
-									xl={12}
-									lg={12}
-									md={12}
-									sm={12}
-									xs={12}
-								>
-									<Button variant="contained" color="primary">
-										{svc.fields.price}
-									</Button>
-									{/* <Typography variant="subtitle2">
-										{svc.fields.price}
-									</Typography> */}
-								</Grid>
-							</Grid>
-						</Paper>
-					</Grid>
+					<Fade delay={500}>
+						<div className="p-6 text-center bg-white rounded-md shadow-lg">
+							<span className="block my-3 text-base text-indigo-600 uppercase">
+								Conectá
+							</span>
+							<h3
+								key={svc.sys.id}
+								className="h-24 pb-2 text-xl font-bold text-gray-700"
+							>{`${svc.fields.name}`}</h3>
+
+							<p className="pb-3 mb-2 text-base border-b border-indigo-200 ">
+								Lorem ipsm .. asdfa sdfasdlfjasdfl sflkasdf
+								alsdkfj salkfajs lfkdsjf laksdjf alskdjfas
+								ldkjfha d
+							</p>
+							<b className="block mb-2 text-3xl text-indigo-600">
+								${svc.fields.price}
+							</b>
+						</div>
+					</Fade>
 				))}
-			</Grid>
-		</Page>
+			</div>
+		</div>
 	);
 };
 
 export default withData(withElevation(ServicesPage), "servicio");
+
+const HeroTitle = styled.h1`
+	${tw`mt-8 text-5xl font-bold text-indigo-100`}
+	${tw`relative z-20`}
+`;

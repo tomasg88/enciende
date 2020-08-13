@@ -8,9 +8,12 @@ import {
 	withContentful,
 } from "react-contentful";
 
+import tw from "twin.macro";
+import styled from "@emotion/styled";
+
 const contentClient = new ContentfulClient({
-	// accessToken: contentful,
-	// space: contentful,
+	accessToken: "emSrA-bpF66nnvE3xjPu-q18g6ufCGDMQ1i0oNhfOas",
+	space: "rwruvvbev2hq",
 });
 
 function App() {
