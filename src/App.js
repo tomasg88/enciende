@@ -8,24 +8,19 @@ import {
 	withContentful,
 } from "react-contentful";
 
-import tw from "twin.macro";
-import styled from "@emotion/styled";
-
 const contentClient = new ContentfulClient({
-	accessToken: "emSrA-bpF66nnvE3xjPu-q18g6ufCGDMQ1i0oNhfOas",
-	space: "rwruvvbev2hq",
+	accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
+	space: process.env.REACT_APP_CONTENTFUL_SPACE,
 });
 
-function App() {
-	return (
-		<ContentfulProvider client={contentClient}>
-			<BrowserRouter>
-				<div className="App">
-					<Layout />
-				</div>
-			</BrowserRouter>
-		</ContentfulProvider>
-	);
-}
+const App = () => (
+	<ContentfulProvider client={contentClient}>
+		<BrowserRouter>
+			<div className="App">
+				<Layout />
+			</div>
+		</BrowserRouter>
+	</ContentfulProvider>
+);
 
 export default withContentful(App);
